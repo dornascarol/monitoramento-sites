@@ -3,11 +3,8 @@ package main
 import "fmt"
 
 func main() {
-	name := "Glô"
-	version := 1.0
 
-	fmt.Println("Hi,", name)
-	fmt.Println("This program is in version", version)
+	displayIntroduction()
 
 	fmt.Println("1) Start websites monitoring")
 	fmt.Println("2) Display the logs")
@@ -27,4 +24,11 @@ func main() {
 	default:
 		fmt.Println("I don't know this command")
 	}
+}
+
+func displayIntroduction() {
+	name := "Glô"
+	version := 1.1
+	fmt.Println("Hi,", name)
+	fmt.Println("This program is in version", version)
 }
