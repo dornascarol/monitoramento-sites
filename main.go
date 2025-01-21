@@ -10,9 +10,7 @@ func main() {
 	fmt.Println("2) Display the logs")
 	fmt.Println("3) Exit the program")
 
-	var command int
-	fmt.Scan(&command)
-	fmt.Println("The command selected was:", command)
+	command := readCommand()
 
 	switch command {
 	case 1:
@@ -31,4 +29,12 @@ func displayIntroduction() {
 	version := 1.1
 	fmt.Println("Hi,", name)
 	fmt.Println("This program is in version", version)
+}
+
+func readCommand() int {
+	var commandReadyReading int
+	fmt.Scan(&commandReadyReading)
+	fmt.Println("The command selected was:", commandReadyReading)
+
+	return commandReadyReading
 }
