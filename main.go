@@ -1,6 +1,9 @@
 package main
 
-import "fmt"
+import (
+	"fmt"
+	"os"
+)
 
 func main() {
 
@@ -15,8 +18,10 @@ func main() {
 		fmt.Println("Displaying the logs")
 	case 3:
 		fmt.Println("Exiting the program")
+		os.Exit(0)
 	default:
 		fmt.Println("I don't know this command")
+		os.Exit(-1)
 	}
 }
 
