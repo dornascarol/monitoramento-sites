@@ -13,7 +13,7 @@ func main() {
 
 	switch command {
 	case 1:
-		fmt.Println("Monitoring the websites")
+		startMonitoring()
 	case 2:
 		fmt.Println("Displaying the logs")
 	case 3:
@@ -44,4 +44,8 @@ func readCommand() int {
 	fmt.Println("The command selected was:", commandReadyReading)
 
 	return commandReadyReading
+}
+
+func startMonitoring() {
+	fmt.Println("Monitoring the websites")
 }
