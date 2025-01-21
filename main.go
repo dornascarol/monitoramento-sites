@@ -5,11 +5,7 @@ import "fmt"
 func main() {
 
 	displayIntroduction()
-
-	fmt.Println("1) Start websites monitoring")
-	fmt.Println("2) Display the logs")
-	fmt.Println("3) Exit the program")
-
+	displayMenu()
 	command := readCommand()
 
 	switch command {
@@ -29,6 +25,12 @@ func displayIntroduction() {
 	version := 1.1
 	fmt.Println("Hi,", name)
 	fmt.Println("This program is in version", version)
+}
+
+func displayMenu() {
+	fmt.Println("1) Start websites monitoring")
+	fmt.Println("2) Display the logs")
+	fmt.Println("3) Exit the program")
 }
 
 func readCommand() int {
