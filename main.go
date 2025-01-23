@@ -2,6 +2,7 @@ package main
 
 import (
 	"fmt"
+	"net/http"
 	"os"
 )
 
@@ -9,6 +10,7 @@ func main() {
 
 	displayIntroduction()
 	displayMenu()
+
 	command := readCommand()
 
 	switch command {
@@ -48,4 +50,12 @@ func readCommand() int {
 
 func startMonitoring() {
 	fmt.Println("Monitoring the websites")
+	website := "https://ge.globo.com/"
+	response, _ := http.Get(website)
+
+	if response.StatusCode == 200 {
+		fmt.Println("Website:", website, "was loaded successfully!")
+	} else {
+		fmt.Println("Website:", website, "is having problems. Status code is:", response.StatusCode)
+	}
 }
