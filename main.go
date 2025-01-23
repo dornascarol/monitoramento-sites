@@ -9,21 +9,24 @@ import (
 func main() {
 
 	displayIntroduction()
-	displayMenu()
 
-	command := readCommand()
+	for {
+		displayMenu()
 
-	switch command {
-	case 1:
-		startMonitoring()
-	case 2:
-		fmt.Println("Displaying the logs")
-	case 3:
-		fmt.Println("Exiting the program")
-		os.Exit(0)
-	default:
-		fmt.Println("I don't know this command")
-		os.Exit(-1)
+		command := readCommand()
+
+		switch command {
+		case 1:
+			startMonitoring()
+		case 2:
+			fmt.Println("Displaying the logs")
+		case 3:
+			fmt.Println("Exiting the program")
+			os.Exit(0)
+		default:
+			fmt.Println("I don't know this command")
+			os.Exit(-1)
+		}
 	}
 }
 
