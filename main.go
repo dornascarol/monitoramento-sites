@@ -53,7 +53,17 @@ func readCommand() int {
 
 func startMonitoring() {
 	fmt.Println("Monitoring the websites")
-	website := "https://ge.globo.com/"
+	allWebsites := []string{"https://ge.globo.com/", "https://g1.globo.com/", "https://premiere.globo.com/agora", "https://combate.globo.com/"}
+
+	for i, website := range allWebsites {
+		fmt.Println("Testing website", i, ":", website)
+		testWebsite(website)
+	}
+
+	fmt.Println("")
+}
+
+func testWebsite(website string) {
 	response, _ := http.Get(website)
 
 	if response.StatusCode == 200 {
