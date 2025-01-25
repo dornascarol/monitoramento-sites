@@ -4,7 +4,11 @@ import (
 	"fmt"
 	"net/http"
 	"os"
+	"time"
 )
+
+const monitoring = 3
+const delay = 5
 
 func main() {
 
@@ -47,6 +51,7 @@ func readCommand() int {
 	var commandReadyReading int
 	fmt.Scan(&commandReadyReading)
 	fmt.Println("The command selected was:", commandReadyReading)
+	fmt.Println("")
 
 	return commandReadyReading
 }
@@ -55,9 +60,13 @@ func startMonitoring() {
 	fmt.Println("Monitoring the websites")
 	allWebsites := []string{"https://ge.globo.com/", "https://g1.globo.com/", "https://premiere.globo.com/agora", "https://combate.globo.com/"}
 
-	for i, website := range allWebsites {
-		fmt.Println("Testing website", i, ":", website)
-		testWebsite(website)
+	for i := 0; i < monitoring; i++ {
+		for i, website := range allWebsites {
+			fmt.Println("Testing website", i, ":", website)
+			testWebsite(website)
+		}
+		time.Sleep(delay * time.Second)
+		fmt.Println("")
 	}
 
 	fmt.Println("")
