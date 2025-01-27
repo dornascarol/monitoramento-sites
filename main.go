@@ -13,6 +13,7 @@ const delay = 5
 func main() {
 
 	displayIntroduction()
+	readArchiveWebsites()
 
 	for {
 		displayMenu()
@@ -58,7 +59,8 @@ func readCommand() int {
 
 func startMonitoring() {
 	fmt.Println("Monitoring the websites")
-	allWebsites := []string{"https://ge.globo.com/", "https://g1.globo.com/", "https://premiere.globo.com/agora", "https://combate.globo.com/"}
+
+	allWebsites := readArchiveWebsites()
 
 	for i := 0; i < monitoring; i++ {
 		for i, website := range allWebsites {
@@ -73,11 +75,29 @@ func startMonitoring() {
 }
 
 func testWebsite(website string) {
-	response, _ := http.Get(website)
+	response, error := http.Get(website)
+
+	if error != nil {
+		fmt.Println("An error happened:", error)
+	}
 
 	if response.StatusCode == 200 {
 		fmt.Println("Website:", website, "was loaded successfully!")
 	} else {
 		fmt.Println("Website:", website, "is having problems. Status code is:", response.StatusCode)
 	}
+}
+
+func readArchiveWebsites() []string {
+
+	var websites []string
+
+	file, error := os.Open("websites.txt")
+
+	if error != nil {
+		fmt.Println("An error happened:", error)
+	}
+
+	fmt.Println(file)
+	return websites
 }
