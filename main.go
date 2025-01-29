@@ -1,6 +1,7 @@
 package main
 
 import (
+	"bufio"
 	"fmt"
 	"net/http"
 	"os"
@@ -93,11 +94,19 @@ func readArchiveWebsites() []string {
 	var websites []string
 
 	file, error := os.Open("websites.txt")
+	if error != nil {
+		fmt.Println("An error happened:", error)
+	}
+
+	reader := bufio.NewReader(file)
+
+	line, error := reader.ReadString('\n')
 
 	if error != nil {
 		fmt.Println("An error happened:", error)
 	}
 
-	fmt.Println(file)
+	fmt.Println(line)
+
 	return websites
 }
