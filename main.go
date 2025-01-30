@@ -3,8 +3,10 @@ package main
 import (
 	"bufio"
 	"fmt"
+	"io"
 	"net/http"
 	"os"
+	"strings"
 	"time"
 )
 
@@ -99,14 +101,18 @@ func readArchiveWebsites() []string {
 	}
 
 	reader := bufio.NewReader(file)
+	for {
+		line, error := reader.ReadString('\n')
+		line = strings.TrimSpace(line)
 
-	line, error := reader.ReadString('\n')
+		websites = append(websites, line)
 
-	if error != nil {
-		fmt.Println("An error happened:", error)
+		if error == io.EOF {
+			break
+		}
 	}
 
-	fmt.Println(line)
+	file.Close()
 
 	return websites
 }
