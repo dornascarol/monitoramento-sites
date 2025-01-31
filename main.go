@@ -16,7 +16,8 @@ const delay = 5
 func main() {
 
 	displayIntroduction()
-	readArchiveWebsites()
+
+	registerLogs("website-false", false)
 
 	for {
 		displayMenu()
@@ -86,8 +87,10 @@ func testWebsite(website string) {
 
 	if response.StatusCode == 200 {
 		fmt.Println("Website:", website, "was loaded successfully!")
+		registerLogs(website, true)
 	} else {
 		fmt.Println("Website:", website, "is having problems. Status code is:", response.StatusCode)
+		registerLogs(website, false)
 	}
 }
 
@@ -115,4 +118,15 @@ func readArchiveWebsites() []string {
 	file.Close()
 
 	return websites
+}
+
+func registerLogs(website string, status bool) {
+
+	file, error := os.OpenFile("logs.txt", os.O_RDWR|os.O_CREATE, 0666)
+
+	if error != nil {
+		fmt.Println(error)
+	}
+
+	fmt.Println(file)
 }
