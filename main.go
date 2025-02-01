@@ -6,6 +6,7 @@ import (
 	"io"
 	"net/http"
 	"os"
+	"strconv"
 	"strings"
 	"time"
 )
@@ -16,8 +17,6 @@ const delay = 5
 func main() {
 
 	displayIntroduction()
-
-	registerLogs("website-false", false)
 
 	for {
 		displayMenu()
@@ -122,11 +121,13 @@ func readArchiveWebsites() []string {
 
 func registerLogs(website string, status bool) {
 
-	file, error := os.OpenFile("logs.txt", os.O_RDWR|os.O_CREATE, 0666)
+	file, error := os.OpenFile("logs.txt", os.O_RDWR|os.O_CREATE|os.O_APPEND, 0666)
 
 	if error != nil {
 		fmt.Println(error)
 	}
 
-	fmt.Println(file)
+	file.WriteString(website + " - online: " + strconv.FormatBool(status) + "\n")
+
+	file.Close()
 }
