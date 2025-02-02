@@ -11,7 +11,7 @@ import (
 	"time"
 )
 
-const monitoring = 3
+const monitoring = 2
 const delay = 5
 
 func main() {
@@ -127,7 +127,7 @@ func registerLogs(website string, status bool) {
 		fmt.Println(error)
 	}
 
-	file.WriteString(website + " - online: " + strconv.FormatBool(status) + "\n")
+	file.WriteString(time.Now().Format("02/01/2006 15:04:05") + " - " + website + " - online: " + strconv.FormatBool(status) + "\n")
 
 	file.Close()
 }
