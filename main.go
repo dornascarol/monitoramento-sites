@@ -4,6 +4,7 @@ import (
 	"bufio"
 	"fmt"
 	"io"
+	"io/ioutil"
 	"net/http"
 	"os"
 	"strconv"
@@ -28,6 +29,7 @@ func main() {
 			startMonitoring()
 		case 2:
 			fmt.Println("Displaying the logs")
+			printLogs()
 		case 3:
 			fmt.Println("Exiting the program")
 			os.Exit(0)
@@ -130,4 +132,15 @@ func registerLogs(website string, status bool) {
 	file.WriteString(time.Now().Format("02/01/2006 15:04:05") + " - " + website + " - online: " + strconv.FormatBool(status) + "\n")
 
 	file.Close()
+}
+
+func printLogs() {
+
+	file, error := ioutil.ReadFile("logs.txt")
+
+	if error != nil {
+		fmt.Println(error)
+	}
+
+	fmt.Println(string(file))
 }

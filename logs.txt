@@ -15,4 +15,21 @@
 01/02/2025 23:17:50 - https://globoplay.globo.com/ - online: true
 01/02/2025 23:17:50 - https://receitas.globo.com/?utm_source=globo.com&utm_medium=header - online: true
 01/02/2025 23:17:50 - https://oglobo.globo.com/?utm_source=globo.com&utm_medium=header&utm_campaign=chamada_header - online: true
-01/02/2025 23:17:50 - https://valor.globo.com/?utm_source=globo.com&utm_medium=header - online: true
+01/02/2025 23:17:50 - https://valor.globo.com/?utm_source=globo.com&utm_medium=header - online: true02/02/2025 20:56:11 - https://www.globo.com/ - online: true
+02/02/2025 20:56:11 - https://ge.globo.com/ - online: true
+02/02/2025 20:56:11 - https://g1.globo.com/ - online: true
+02/02/2025 20:56:11 - https://premiere.globo.com/agora - online: true
+02/02/2025 20:56:11 - https://combate.globo.com/ - online: true
+02/02/2025 20:56:11 - https://globoplay.globo.com/ - online: true
+02/02/2025 20:56:11 - https://receitas.globo.com/?utm_source=globo.com&utm_medium=header - online: true
+02/02/2025 20:56:11 - https://oglobo.globo.com/?utm_source=globo.com&utm_medium=header&utm_campaign=chamada_header - online: true
+02/02/2025 20:56:12 - https://valor.globo.com/?utm_source=globo.com&utm_medium=header - online: true
+02/02/2025 20:56:17 - https://www.globo.com/ - online: true
+02/02/2025 20:56:17 - https://ge.globo.com/ - online: true
+02/02/2025 20:56:17 - https://g1.globo.com/ - online: true
+02/02/2025 20:56:17 - https://premiere.globo.com/agora - online: true
+02/02/2025 20:56:17 - https://combate.globo.com/ - online: true
+02/02/2025 20:56:17 - https://globoplay.globo.com/ - online: true
+02/02/2025 20:56:17 - https://receitas.globo.com/?utm_source=globo.com&utm_medium=header - online: true
+02/02/2025 20:56:17 - https://oglobo.globo.com/?utm_source=globo.com&utm_medium=header&utm_campaign=chamada_header - online: true
+02/02/2025 20:56:17 - https://valor.globo.com/?utm_source=globo.com&utm_medium=header - online: true
