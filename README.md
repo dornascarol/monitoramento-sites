@@ -28,26 +28,21 @@ Predefined layouts were used with <a href="https://go.dev/src/time/format.go" ta
 
 
 ## Running the project
-1. **To get the repository, clone it:**
+1. **To get the repository, clone it and go to the project folder:**
 	```bash
 	git clone https://github.com/dornascarol/monitoramento-sites.git
 	cd monitoramento-sites
 	```
 
-2. **Command to check, update, and download the package manager modules (go.mod):**
-	```
-	go mod tidy
-	```
-
-3. **Command to run the project in the terminal:**
+2. **Command to run the project in the terminal:**
 	```
 	go run main.go
 	```
 
-4. **To stop the execution in the terminal: press `"Ctrl"` + `"C"`.**
+3. **To stop the execution in the terminal: press `"Ctrl"` + `"C"`.**
 <br>
 
-### _Menu_
+### _Menu in terminal_
 - Selecting Option 1: starts monitoring all websites listed in `websites.txt`. At the same time, the `logs.txt` file will record all logs, including full date, time, URL, and status.
 
 - Selecting Option 2: prints the logs. The logs are initially returned as a byte array but are converted to a string for display in the terminal.
